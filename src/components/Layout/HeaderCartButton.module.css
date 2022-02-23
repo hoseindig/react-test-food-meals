@@ -18,8 +18,9 @@
 }
 
 .icon {
-  width: 1.35rem;
-  height: 1.35rem;
+  /* width: 1.35rem;
+  height: 1.35rem; */
+  font-size: 1.3em;
   margin-right: 0.5rem;
 }
 

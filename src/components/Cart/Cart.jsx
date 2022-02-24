@@ -1,6 +1,6 @@
+import Modal from "../UI/Modal";
 import styles from "./Cart.module.css";
-
-const Cart = () => {
+const Cart = ({ showModal, setCardModal }) => {
   const list = [{ id: "c1", name: "Sushi", amount: 2, price: 12.99 }];
   const cardItems = (
     <ul className={styles["cart-items"]}>
@@ -10,17 +10,27 @@ const Cart = () => {
     </ul>
   );
   return (
-    <div>
+    <Modal showModal={showModal} setCardModal={setCardModal}>
       {cardItems}
       <div className={styles.totall}>
         <span>Totall amount </span>
         <span>35.2</span>
       </div>
       <div className={styles.actions}>
-        <button className={styles["button--alt"]}>close</button>
-        <button className={styles["button"]}>order</button>
+        <button
+          onClick={() => setCardModal(false)}
+          className={styles["button--alt"]}
+        >
+          close
+        </button>
+        <button
+          onClick={() => setCardModal(false)}
+          className={styles["button"]}
+        >
+          order
+        </button>
       </div>
-    </div>
+    </Modal>
   );
 };
 
